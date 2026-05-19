@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ASSOCIAÇÃO ANTIALCOÓLICA DE TAQUARITINGA</title>
+
+<meta name="description" content="ASSOCIAÇÃO ANTIALCOOLICA TAQUARITINGA">
+<meta name="keywords" content="ASSOCIAÇÃO ANTIALCOOLICA TAQUARITINGA">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:#0f0f0f;
+    color:#f5f5f5;
+    line-height:1.8;
+}
+
+/* ========================================================= */
+/* GERAL */
+/* ========================================================= */
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+img{
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ========================================================= */
+/* HEADER */
+/* ========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.header-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+}
+
+.logo img{
+    height:62px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+nav a{
+    font-size:15px;
+    font-weight:500;
+    opacity:.85;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+    opacity:1;
+}
+
+
+/* ========================================================= */
+/* HERO */
+/* ========================================================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.88)),
+    url('./img/back_content_interna2.jpg') center/cover no-repeat;
+
+    padding:180px 20px 120px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-logo{
+    width:260px;
+    margin-bottom:35px;
+    filter:drop-shadow(0 15px 40px rgba(0,0,0,.55));
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size:72px;
+    line-height:1.05;
+    margin-bottom:30px;
+    font-weight:700;
+}
+
+.hero h1 span{
+    color:#d4af37;
+}
+
+.hero p{
+    font-size:21px;
+    opacity:.92;
+    margin-bottom:45px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 36px;
+    background:#d4af37;
+    color:#000;
+    border-radius:60px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    background:#f0c654;
+}
+
+/* ========================================================= */
+/* CONTEUDO */
+/* ========================================================= */
+
+.section{
+    padding:110px 0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:70px;
+    align-items:flex-start;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:54px;
+    margin-bottom:35px;
+    color:#d4af37;
+}
+
+.text-box{
+    background:#161616;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:24px;
+    padding:45px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.text-box h4{
+    color:#d4af37;
+    font-size:24px;
+    margin-top:35px;
+    margin-bottom:18px;
+}
+
+.text-box p{
+    color:#d8d8d8;
+    margin-bottom:18px;
+    font-size:17px;
+}
+
+.image-box{
+    position:sticky;
+    top:120px;
+}
+
+.image-box img{
+    width:100%;
+    border-radius:24px;
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+/* ========================================================= */
+/* FOTO PREDIO */
+/* ========================================================= */
+
+.predio{
+    padding:0 0 110px;
+}
+
+.predio img{
+    width:100%;
+    border-radius:24px;
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+/* ========================================================= */
+/* REDES */
+/* ========================================================= */
+
+.social-section{
+    background:linear-gradient(135deg,#d4af37,#8c6a11);
+    color:#000;
+    padding:10px 10px;
+    text-align:center;
+    margin-bottom:0px;
+	margin-top:0px;
+}
+
+.social-section h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:42px;
+    margin-bottom:5px;
+	margin-top:5px;
+}
+
+.social-section p{
+    font-size:18px;
+    margin-bottom:5px;
+	margin-top:5px;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    background:#000;
+    color:#fff;
+    padding:14px 28px;
+    border-radius:50px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.social-links a:hover{
+    transform:translateY(-3px);
+}
+
+/* ========================================================= */
+/* FOOTER */
+/* ========================================================= */
+
+footer{
+    background:#080808;
+    border-top:1px solid rgba(255,255,255,.06);
+    padding:40px 20px;
+    text-align:center;
+}
+
+footer p{
+    opacity:.7;
+    font-size:14px;
+}
+
+/* ========================================================= */
+/* RESPONSIVO */
+/* ========================================================= */
+
+@media(max-width:980px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .image-box{
+        position:relative;
+        top:0;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    nav{
+        display:none;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding-top:150px;
+    }
+
+    .hero-logo{
+        width:190px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-title{
+        font-size:42px;
+    }
+
+    .text-box{
+        padding:28px;
+    }
+
+	
+}
+
+nav a{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:15px;
+font-weight:500;
+opacity:.85;
+transition:.3s;
+}
+
+nav a i{
+font-size:14px;
+color:#d4af37;
+}
+
+.social-links a i{
+    margin-right:8px;
+    color:#d4af37;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ====================================================== -->
+<!-- HEADER -->
+<!-- ====================================================== -->
+
+<header>
+
+    <div class="container header-content">
+
+        <a href="index.html" class="logo">
+            <img src="./img/logo-aaat2.png" alt="AAAT">
+        </a>
+
+		<nav>
+			<a href="reunioes.html">
+				<i class="fa-solid fa-users"></i>
+				Reuniões
+			</a>
+
+			<a href="eventos.html">
+				<i class="fa-solid fa-calendar-days"></i>
+				Eventos
+			</a>
+
+			<a href="docs.html">
+				<i class="fa-solid fa-file-lines"></i>
+				Estatuto/Documentos
+			</a>
+
+			<a href="contato.html">
+				<i class="fa-solid fa-envelope"></i>
+				Contato
+			</a>
+		</nav>
+
+    </div>
+
+</header>
+
+
+<!-- ====================================================== -->
+<!-- CONTEUDO -->
+<!-- ====================================================== -->
+
+<section class="section">
+
+    <div class="container grid">
+
+        <div>
+
+            <div class="text-box">
+
+                <h4>♥ A Associação Antialcoólica de Taquaritinga</h4>
+
+                <p>
+                    Somos uma entidade sem fins lucrativos, que há mais 30 anos temos como maior e único objetivo resgatar a dignidade e devolver a esperança àqueles que nos procuram, ajudamos pessoas que tenham alguma ligação ruim com alcoolismo e drogas.
+                </p>
+
+                <p>
+                    Apenas contamos com a colaboração de pessoas que apoiam nossa causa.
+                </p>
+
+                <p>
+                    Os tratamentos é realizado por meio de uma terapia de grupo, em que cada um compartilha sua história com o restante das pessoas, de como era sua vida antes de conhecer a associação e depois. Dessa maneira, há uma identificação entre os portadores desse problema.
+                </p>
+
+                <p>
+                    O nosso remédio é dado pela boca e tomado pelo ouvido. Se a pessoa não frequenta as reuniões, geralmente ela recai.
+                </p>
+
+                <p>
+                    Somos uma associação que conta com a colaboração de pessoas que apoiam nossa causa.
+                </p>
+
+                <p>
+                    A Associação Antialcoólica de Taquaritinga foi fundada no ano de 1982 e desde sua fundação tem contribuído com o processo de acolhimento e orientação quanto aos danos causados pelo álcool e outras drogas aos dependentes químicos.
+                </p>
+
+                <p>
+                    Atuamos no apoio e fortalecimento da base familiar.
+                </p>
+
+                <p>
+                    Realizamos diversas palestras de conscientização como álcool, tabaco e outras drogas.
+                </p>
+
+                <h4>♥ Histórico</h4>
+
+                <p>
+                    Fundação: 05 de setembro de 1982
+                </p>
+
+                <p>
+                    A iniciativa começou com um grupo de religiosos da Igreja Católica, que com apoio e orientação da Associação Antialcoólica de Votuporanga fundou a OSC.
+                </p>
+
+                <p>
+                    RESPONSÁVEIS/PRESIDENTE: MARIA JOSÉ OLIVEIRA MATEUS
+                </p>
+
+                <h4>♥ Atuação</h4>
+
+                <p>180 pessoas semanais</p>
+                <p>720 pessoas mensalmente</p>
+                <p>8640 pessoas anualmente</p>
+
+                <h4>♥ Evite o primeiro gole</h4>
+
+            </div>
+
+        </div>
+
+        <div class="image-box">
+
+            <img src="./img/quem-somos3.png" alt="AAAT">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- FOTO PRÉDIO -->
+<!-- ====================================================== -->
+
+<section class="predio">
+
+    <div class="container">
+
+        <img src="./img/predio.png" alt="Prédio AAAT">
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- REDES -->
+<!-- ====================================================== -->
+
+<section class="social-section">
+
+    <div class="container">
+
+        <h2>Redes Sociais</h2>
+
+        <p>
+            Entre em contato conosco ou acompanhe nossas atividades.
+        </p>
+
+        <div class="social-links">
+
+			<a href="mailto:aataquaritinga@gmail.com">
+				<i class="fa-solid fa-envelope"></i>
+				E-mail
+			</a>
+
+			<a 
+				href="https://www.facebook.com/profile.php?id=100011397605586"
+				target="_blank"
+			>
+				<i class="fa-brands fa-facebook-f"></i>
+				Facebook
+			</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- FOOTER -->
+<!-- ====================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2020 ASSOCIAÇÃO ANTI-ALCOOLICA DE TAQUARITINGA. Todos os direitos reservados
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
