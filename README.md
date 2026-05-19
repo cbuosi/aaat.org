@@ -1,3 +1,5 @@
+![AAAT](https://raw.githubusercontent.com/cbuosi/aaat.org/refs/heads/main/img/quem-somos4.png)
+
 # Associação Antialcoólica de Taquaritinga (AAAT)
 
 Site institucional da Associação Antialcoólica de Taquaritinga, desenvolvido com foco em acolhimento, acessibilidade, transparência e divulgação das atividades da entidade.
