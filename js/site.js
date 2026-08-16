@@ -1,6 +1,27 @@
+$(document).ready(function() {
+  const $navbar = $('.navbar');
+  const $navLinks = $('.navbar-nav .nav-link');
 
-$(document).ready(function()
-{
-    console.log("Site carregado!");
+  $(window).on('scroll', function() {
+    $navbar.toggleClass('scrolled', $(this).scrollTop() > 50);
+  });
+
+  $navLinks.on('click', function() {
+    $('.navbar-collapse').collapse('hide');
+  });
+
+  $('a[href^="#"]').on('click', function(e) {
+    const target = $(this.getAttribute('href'));
+    if (target.length) {
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: target.offset().top - 80 }, 600);
+    }
+  });
+
+  const current = location.pathname.split('/').pop() || 'index.html';
+  $navLinks.each(function() {
+    if ($(this).attr('href') === current) {
+      $(this).addClass('active').css({ color: 'var(--accent)', opacity: 1 });
+    }
+  });
 });
-
