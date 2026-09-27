@@ -11,6 +11,42 @@
     --radius-sm:14px;
     --shadow:0 15px 50px rgba(0,0,0,.35);
     --transition:.3s;
+
+    --surface-soft:rgba(255,255,255,.03);
+    --media-bg:#111;
+    --footer-bg:#080808;
+    --btn-bg:#000;
+    --btn-fg:#fff;
+    --on-accent:#000;
+    --muted-soft:#bdbdbd;
+
+    /* A navbar fica escura nos dois temas: o logotipo tem muito pixel claro
+       e sumiria sobre uma barra branca. Por isso ela tem tokens proprios. */
+    --navbar-bg:rgba(0,0,0,.92);
+    --navbar-bg-scrolled:rgba(0,0,0,.98);
+    --navbar-fg:#fff;
+    --navbar-accent:#d4af37;
+}
+
+/* Tema claro. O padrao e o escuro (:root acima); este bloco so entra
+   quando o <html> recebe data-theme="light". */
+:root[data-theme="light"]{
+    --bg:#f3f1ec;
+    --bg-elevated:#fff;
+    --fg:#1c1c1c;
+    --muted:#4d4d4d;
+    --accent:#8a6a14;
+    --accent-dark:#6b5210;
+    --border:rgba(0,0,0,.10);
+    --shadow:0 10px 34px rgba(0,0,0,.10);
+
+    --surface-soft:rgba(0,0,0,.035);
+    --media-bg:#e8e5df;
+    --footer-bg:#e8e5df;
+    --btn-bg:#1c1c1c;
+    --btn-fg:#fff;
+    --on-accent:#fff;
+    --muted-soft:#5c5c5c;
 }
 
 body{
@@ -29,7 +65,7 @@ body{
 /* ====================================================== */
 
 .navbar{
-    background:rgba(0,0,0,.92) !important;
+    background:var(--navbar-bg) !important;
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--border);
 }
@@ -39,7 +75,7 @@ body{
 }
 
 .navbar-nav .nav-link{
-    color:#fff;
+    color:var(--navbar-fg);
     font-weight:500;
     opacity:.85;
     transition:var(--transition);
@@ -77,22 +113,22 @@ body{
 }
 
 .navbar-nav .nav-link:hover{
-    color:var(--accent);
+    color:var(--navbar-accent);
     opacity:1;
 }
 
 .navbar-nav .nav-link i{
-    color:var(--accent);
+    color:var(--navbar-accent);
     margin-right:8px;
 }
 
 .navbar.scrolled{
-    background:rgba(0,0,0,.98) !important;
+    background:var(--navbar-bg-scrolled) !important;
     box-shadow:0 4px 20px rgba(0,0,0,.4);
 }
 
 .navbar-nav .nav-link.active{
-    color:var(--accent) !important;
+    color:var(--navbar-accent) !important;
     opacity:1;
 }
 
@@ -187,7 +223,7 @@ body{
 
 .social-section{
     background:linear-gradient(135deg,var(--accent),var(--accent-dark));
-    color:#000;
+    color:var(--on-accent);
 }
 
 .social-section h2{
@@ -197,8 +233,8 @@ body{
 }
 
 .social-btn{
-    background:#000;
-    color:#fff;
+    background:var(--btn-bg);
+    color:var(--btn-fg);
     border-radius:50px;
     padding:11px 24px;
     text-decoration:none;
@@ -208,12 +244,70 @@ body{
 
 .social-btn:hover{
     transform:translateY(-3px);
-    color:#fff;
+    color:var(--btn-fg);
 }
 
 .social-btn i{
     color:var(--accent);
     margin-right:8px;
+}
+
+/* ====================================================== */
+/* BOTAO DE TEMA (lua / sol) */
+/* ====================================================== */
+
+.tema-btn{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.25);
+    color:var(--navbar-accent);
+
+    width:40px;
+    height:40px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+    transition:var(--transition);
+    flex-shrink:0;
+}
+
+.tema-btn:hover{
+    border-color:var(--navbar-accent);
+    transform:rotate(-15deg);
+}
+
+.tema-btn i{
+    font-size:1rem;
+}
+
+/* No celular o botao fica ao lado do sanduiche, fora do menu recolhivel,
+   para continuar acessivel com o menu fechado. */
+.navbar .navbar-acoes{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* No tema claro o card fica branco e o logotipo, que tem muito pixel claro,
+   sumiria: por isso ele ganha uma placa escura atras. */
+:root[data-theme="light"] .hero-logo{
+    background:#141414;
+    padding:14px 18px;
+    border-radius:16px;
+}
+
+/* Troca de tema suave, sem piscar */
+body,
+.custom-card,
+.event-card,
+footer,
+.document-item,
+.contact-item,
+.info-item{
+    transition:background-color .25s ease, color .25s ease, border-color .25s ease;
 }
 
 /* ====================================================== */
@@ -307,7 +401,7 @@ body{
 /* ====================================================== */
 
 footer{
-    background:#080808;
+    background:var(--footer-bg);
     border-top:1px solid var(--border);
 }
 
@@ -336,7 +430,7 @@ footer{
     gap:18px;
     align-items:flex-start;
 
-    background:rgba(255,255,255,.03);
+    background:var(--surface-soft);
     border:1px solid var(--border);
 
     padding:16px;
@@ -374,7 +468,7 @@ footer{
 .event-card{
     overflow:hidden;
     border-radius:20px;
-    background:#111;
+    background:var(--media-bg);
     border:1px solid var(--border);
 
     transition:.35s;
@@ -424,7 +518,7 @@ footer{
     display:flex;
     gap:16px;
 
-    background:rgba(255,255,255,.03);
+    background:var(--surface-soft);
     border:1px solid var(--border);
 
     padding:14px;
@@ -468,14 +562,14 @@ footer{
     align-items:center;
     gap:20px;
 
-    background:rgba(255,255,255,.03);
+    background:var(--surface-soft);
     border:1px solid var(--border);
 
     padding:16px;
     border-radius:20px;
 
     text-decoration:none;
-    color:#fff;
+    color:var(--fg);
 
     transition:var(--transition);
 }
@@ -513,13 +607,13 @@ footer{
 
 .document-content strong{
     display:block;
-    color:#fff;
+    color:var(--fg);
     margin-bottom:6px;
     font-size:17px;
 }
 
 .document-content span{
-    color:#bdbdbd;
+    color:var(--muted-soft);
     font-size:14px;
 }
 
@@ -531,7 +625,7 @@ footer{
 
     background:var(--accent);
 
-    color:#000;
+    color:var(--on-accent);
 
     display:flex;
     align-items:center;

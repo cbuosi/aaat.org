@@ -5,7 +5,7 @@ $tituloPagina = $PAGINA['title'] === $SITE['nome']
     : $PAGINA['title'] . ' | ' . $SITE['nome'];
 ?>
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,6 +33,19 @@ $tituloPagina = $PAGINA['title'] === $SITE['nome']
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <script>
+      // Roda antes da pagina pintar: sem isso o tema claro piscaria escuro
+      // por um instante a cada carregamento.
+      (function () {
+        try {
+          var t = localStorage.getItem("tema");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <link rel="stylesheet" href="<?= asset('css/style.css') ?>" />
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
@@ -51,17 +64,29 @@ $tituloPagina = $PAGINA['title'] === $SITE['nome']
           <img src="<?= asset('img/logo-aaat2.png') ?>" alt="<?= e($SITE['nome']) ?>" />
         </a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#menu"
-          aria-controls="menu"
-          aria-expanded="false"
-          aria-label="Abrir menu de navegação"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="navbar-acoes order-lg-last">
+          <button
+            class="tema-btn"
+            type="button"
+            id="tema-btn"
+            aria-label="Alternar entre modo claro e escuro"
+            title="Alternar entre modo claro e escuro"
+          >
+            <i class="fa-solid fa-sun"></i>
+          </button>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Abrir menu de navegação"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav ms-auto">
