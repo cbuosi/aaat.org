@@ -1,0 +1,51 @@
+<?php
+/**
+ * Texto institucional dos 44 anos da AAAT (setembro de 2026).
+ * Usado nas paginas do Jantar Beneficente e da Premiação, que trazem
+ * o mesmo texto de fundo com datas e fotos diferentes.
+ */
+?>
+                <p>
+                  A prevenção e o tratamento do alcoolismo ganham um significado
+                  profundo em setembro de 2026, mês em que a Associação
+                  Antialcoólica de Taquaritinga (AAAT) celebra com orgulho os
+                  seus 44 anos de fundação. Desde a sua criação em 5 de setembro
+                  de 1982, a entidade filantrópica tem sido um farol de esperança
+                  no município paulista, transformando a dor da dependência
+                  química em histórias de superação, dignidade e forte
+                  reconstrução familiar.
+                </p>
+
+                <p>
+                  O alcoolismo é classificado como uma doença crônica e impacta
+                  diretamente não apenas o indivíduo, mas todo o seu ecossistema
+                  afetivo. Ciente dessa realidade, a associação adota o lema
+                  marcante: <em>&ldquo;Em cada cálice de álcool há lágrimas de
+                  mães, esposas e filhos&rdquo;</em>. Essa frase sintetiza a
+                  essência do trabalho da AAAT: entender que tratar a dependência
+                  exige, obrigatoriamente, acolher, amparar e reestruturar a base
+                  familiar.
+                </p>
+
+                <p>
+                  O modelo de tratamento promovido pela instituição baseia-se na
+                  prevenção contínua e na poderosa terapia de grupo. Sem o uso de
+                  medicamentos químicos substitutivos, os membros costumam
+                  resumir a dinâmica com uma máxima popular e sábia:
+                  <em>&ldquo;o nosso remédio é dado pela boca e tomado pelo
+                  ouvido&rdquo;</em>. É por meio da escuta atenta, do
+                  compartilhamento de vivências dolorosas e do aprendizado mútuo
+                  nas reuniões frequentes que os recuperandos encontram forças
+                  para manter a sobriedade diária.
+                </p>
+
+                <p>
+                  A celebração desses 44 anos em setembro de 2026 &mdash; marcada
+                  por encontros comemorativos e celebrações na sede social da
+                  Vila Rosa &mdash; é o reflexo vivo do impacto comunitário e da
+                  utilidade pública que a associação representa. Mais do que
+                  festejar o tempo de existência, a data homenageia a resiliência
+                  de centenas de cidadãos taquaritinguenses que escolheram
+                  resgatar suas vidas e o futuro de suas famílias longe do
+                  álcool.
+                </p>

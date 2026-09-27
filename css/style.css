@@ -17,6 +17,11 @@ body{
     background:var(--bg);
     color:var(--fg);
     font-family:'Inter',sans-serif;
+
+    /* A navbar e fixed-top e sai do fluxo da pagina: sem este espaco o
+       primeiro conteudo fica escondido atras dela. Antes isso era feito
+       com dois <br> no header, que nao cobriam a altura real da barra. */
+    padding-top:68px;
 }
 
 /* ====================================================== */
@@ -30,7 +35,7 @@ body{
 }
 
 .navbar-brand img{
-    height:60px;
+    height:46px;
 }
 
 .navbar-nav .nav-link{
@@ -38,6 +43,37 @@ body{
     font-weight:500;
     opacity:.85;
     transition:var(--transition);
+    white-space:nowrap;
+    display:flex;
+    align-items:center;
+}
+
+/* Itens de duas linhas ("Quermesse" + "2026"): o ano fica logo abaixo,
+   menor e discreto, com o icone centralizado nas duas linhas. */
+.nav-label{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+}
+
+.nav-label-2{
+    font-size:.78em;
+    font-weight:400;
+    opacity:.75;
+}
+
+/* Com 7 itens o menu fica justo entre 992px e 1399px: aperta o espacamento
+   e reduz a fonte para que a barra caiba em uma unica faixa. */
+@media (min-width:992px) and (max-width:1399px){
+    .navbar-nav .nav-link{
+        font-size:.92rem;
+        padding-left:.55rem;
+        padding-right:.55rem;
+    }
+
+    .navbar-nav .nav-link i{
+        margin-right:5px;
+    }
 }
 
 .navbar-nav .nav-link:hover{
@@ -76,13 +112,13 @@ body{
 
 .custom-card h4{
     color:var(--accent);
-    margin-top:30px;
-    margin-bottom:20px;
+    margin-top:22px;
+    margin-bottom:12px;
 }
 
 .custom-card p{
     color:var(--muted);
-    line-height:1.9;
+    line-height:1.75;
 }
 
 .custom-card img{
@@ -90,8 +126,50 @@ body{
 }
 
 .hero-logo{
-    width:260px;
-    margin-bottom:35px;
+    width:190px;
+    margin-bottom:24px;
+}
+
+/* Cabecalho das paginas internas: logotipo e titulo a esquerda, foto
+   institucional a direita. Antes a foto ocupava uma coluna propria de 1/3
+   da pagina; integrada aqui, o conteudo usa a largura toda. */
+.page-hero{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.page-hero-text{
+    flex:1 1 auto;
+    min-width:0;
+}
+
+.page-hero-text .hero-logo{
+    margin-bottom:16px;
+}
+
+.page-hero-text h1{
+    margin-bottom:0;
+    overflow-wrap:break-word;
+}
+
+.page-hero-photo{
+    flex:0 0 250px;
+    max-width:250px;
+}
+
+@media(max-width:991px){
+    .page-hero{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .page-hero-photo{
+        flex:1 1 auto;
+        max-width:100%;
+        width:100%;
+    }
 }
 
 /* ====================================================== */
@@ -114,7 +192,7 @@ body{
 
 .social-section h2{
     font-family:'Cormorant Garamond', serif;
-    font-size:52px;
+    font-size:36px;
     font-weight:700;
 }
 
@@ -122,7 +200,7 @@ body{
     background:#000;
     color:#fff;
     border-radius:50px;
-    padding:14px 28px;
+    padding:11px 24px;
     text-decoration:none;
     transition:var(--transition);
     display:inline-block;
@@ -136,6 +214,92 @@ body{
 .social-btn i{
     color:var(--accent);
     margin-right:8px;
+}
+
+/* ====================================================== */
+/* CABECALHO DE CARD (icone + titulo + subtitulo) */
+/* ====================================================== */
+
+.card-titulo{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.card-titulo-icone{
+    flex:0 0 auto;
+}
+
+/* min-width:0 e essencial: sem isso o bloco de texto nao encolhe abaixo da
+   largura da palavra mais longa e o titulo vaza para fora do card no celular. */
+.card-titulo-texto{
+    flex:1 1 auto;
+    min-width:0;
+}
+
+.card-titulo-texto h2,
+.card-titulo-texto h4{
+    overflow-wrap:break-word;
+    line-height:1.25;
+}
+
+@media(max-width:575px){
+    .card-titulo{
+        gap:14px;
+    }
+
+    .card-titulo-texto h2{
+        font-size:1.4rem;
+    }
+
+    .card-titulo-texto h4{
+        font-size:1.2rem;
+    }
+
+    .card-titulo-icone .fa-2x{
+        font-size:1.6em;
+    }
+}
+
+/* ====================================================== */
+/* DESTAQUES DA HOME */
+/* ====================================================== */
+
+/* Cartoes da home que levam as paginas do jantar e da premiacao:
+   reaproveitam o hover de .event-card, com um corpo de texto abaixo da foto. */
+.destaque-card{
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+}
+
+.destaque-card img{
+    border-radius:0;
+}
+
+.destaque-corpo{
+    padding:18px 20px 20px;
+}
+
+.destaque-corpo h4{
+    color:var(--accent);
+    margin:0 0 4px;
+    font-size:1.2rem;
+}
+
+.destaque-corpo h4 i{
+    margin-right:8px;
+}
+
+.destaque-corpo p{
+    color:var(--muted);
+    line-height:1.65;
+    margin-bottom:16px;
+}
+
+.destaque-card:hover .social-btn{
+    transform:translateY(-3px);
 }
 
 /* ====================================================== */
@@ -175,7 +339,7 @@ footer{
     background:rgba(255,255,255,.03);
     border:1px solid var(--border);
 
-    padding:22px;
+    padding:16px;
     border-radius:20px;
 
     height:100%;
@@ -240,14 +404,14 @@ footer{
 
 .meeting-box h4{
     color:var(--accent);
-    margin-bottom:25px;
-    font-size:28px;
+    margin-bottom:16px;
+    font-size:24px;
 }
 
 .meeting-box p{
     color:var(--muted);
-    line-height:1.9;
-    margin-bottom:18px;
+    line-height:1.75;
+    margin-bottom:14px;
 }
 
 .meeting-info{
@@ -263,7 +427,7 @@ footer{
     background:rgba(255,255,255,.03);
     border:1px solid var(--border);
 
-    padding:18px;
+    padding:14px;
     border-radius:var(--radius-md);
 
     transition:var(--transition);
@@ -307,7 +471,7 @@ footer{
     background:rgba(255,255,255,.03);
     border:1px solid var(--border);
 
-    padding:22px;
+    padding:16px;
     border-radius:20px;
 
     text-decoration:none;
